@@ -1,0 +1,48 @@
+---
+import Heading from "#components/atoms/Heading.astro";
+
+const {
+  class: className,
+  description,
+  headingId = "",
+  title,
+  subtitle,
+  supertitle,
+  ...rest
+} = Astro.props;
+---
+
+<section class:list={[className, "headline"]} {...rest}>
+  <header>
+    {supertitle && <small>{supertitle}</small>}
+    <Heading Element="h2" id={headingId}><slot name="title" /></Heading>
+
+    <slot name="subtitle" />
+  </header>
+  <hr />
+  <slot name="description" />
+  <slot name="footer" />
+</section>
+
+<style>
+  hr {
+    margin: 0;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .headline small {
+    color: var(--theme-color-heading--shade);
+    font-size: 0.875rem;
+  }
+</style>

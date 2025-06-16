@@ -1,0 +1,19 @@
+---
+import Atom from "./Atom.astro";
+---
+
+<Atom defaultClass="line-items" Element="ul" {...Astro.props}>
+  <slot />
+</Atom>
+
+<style>
+  .line-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0 0 0 1rem;
+
+    list-style: none;
+  }
+</style>

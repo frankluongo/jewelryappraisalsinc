@@ -1,0 +1,23 @@
+---
+import Atom from "./Atom.astro";
+const { id } = Astro.props;
+---
+
+<Atom defaultClass="section" Element="section" {...Astro.props}>
+  <slot />
+</Atom>
+
+<style>
+  .section {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+
+    opacity: 0;
+    transition: opacity 250ms ease-in-out;
+  }
+
+  .section[data-visible="true"] {
+    opacity: 1;
+  }
+</style>

@@ -1,0 +1,27 @@
+---
+const { aligns } = Astro.props;
+---
+
+<div class="timeline-point" data-timeline-point data-aligns={aligns}></div>
+
+<style>
+  .timeline-point {
+    --size: 1.5rem;
+
+    position: absolute;
+    left: 50%;
+
+    height: var(--size);
+    width: var(--size);
+
+    background: var(--theme-color-action-secondary--default);
+    border-radius: 50%;
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: opacity var(--theme-transition--default);
+  }
+
+  .timeline-point[data-visible="true"] {
+    opacity: 1;
+  }
+</style>

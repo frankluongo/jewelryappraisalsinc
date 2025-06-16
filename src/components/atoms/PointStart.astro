@@ -1,0 +1,20 @@
+---
+const { class: className = "", connects, ...props } = Astro.props;
+---
+
+<div
+  class:list={["point-start", className]}
+  data-point
+  data-connects={connects}
+  {...props}
+>
+</div>
+<style>
+  .point-start {
+    top: 100%;
+    position: absolute;
+    left: 50%;
+
+    transform: translateX(-50%);
+  }
+</style>

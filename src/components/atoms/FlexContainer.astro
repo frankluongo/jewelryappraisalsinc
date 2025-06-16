@@ -1,0 +1,23 @@
+---
+const { class: className = "", Element = "div", ...props } = Astro.props;
+
+// const align = Astro.props.align || "center";
+const containerAlign = "center";
+// const direction = Astro.props.direction || "column";
+// const gap = Astro.props.gap || "1rem";
+// const justify = Astro.props.justify || "center";
+// const wrap = Astro.props.wrap || "wrap";
+
+// const cssVariables = { align, direction, gap, justify, wrap };
+---
+
+<Element class:list={["flex-container", className]} {...props}>
+  <slot />
+</Element>
+
+<style define:vars={{ containerAlign }}>
+  .flex-container {
+    align-items: var(--containerAlign, center);
+    display: flex;
+  }
+</style>

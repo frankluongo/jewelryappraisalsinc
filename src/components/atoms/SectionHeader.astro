@@ -1,0 +1,18 @@
+---
+import Atom from "./Atom.astro";
+const props = Astro.props;
+---
+
+<Atom defaultClass="section-header" {...props}>
+  <slot />
+</Atom>
+
+<style>
+  .section-header {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+</style>

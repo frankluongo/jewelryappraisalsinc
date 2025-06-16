@@ -1,0 +1,84 @@
+---
+import img from "#assets/hero-image.jpg";
+
+import Button from "#components/atoms/Button.astro";
+import PointContainer from "#components/atoms/PointContainer.astro";
+import PointStart from "#components/atoms/PointStart.astro";
+
+import Headline from "#components/molecules/Headline.astro";
+import PointEnd from "#components/atoms/PointEnd.astro";
+---
+
+<div class="hero" id="hero" data-intersect>
+  <div class="hero-content">
+    <Headline class="hero:text-column" id="hero-description">
+      <Fragment slot="title">Melanie D. Krummel</Fragment>
+      <small slot="subtitle">G.G., F.G.A., C.S.M. | GIA, GEM-A, NAJA, AGA</small
+      >
+      <p slot="description">
+        Melanie Krummel established Jewelry, Appraisals, Inc., with a vision to
+        conveniently serve retail jewelry stores, law offices, insurance
+        companies and private clientele with concise, efficiently prepared
+        jewelry appraisals.
+      </p>
+      <footer class="hero:footer" slot="footer">
+        <PointContainer>
+          <Button
+            Element="a"
+            href="#gemological-services"
+            id="view-services-button">View Services</Button
+          >
+          <PointStart connects="gemological-services-point" id="view-services-point" />
+        </PointContainer>
+        <Button Element="a" href="#about-the-appraiser">Learn about me</Button>
+      </footer>
+    </Headline>
+    <section class="hero:image-column">
+      <img class="hero:image" src={img.src} alt="Melanie D. Krummel" />
+    </section>
+  </div>
+</div>
+
+<style>
+  .hero {
+    opacity: 0;
+    transition: opacity 250ms ease-in-out;
+  }
+
+  .hero[data-visible="true"] {
+    opacity: 1;
+  }
+
+  .hero-content {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .hero\:footer {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .hero\:text-column {
+    --max-width: 32rem;
+
+    flex: 1 1 var(--max-width);
+    width: 100%;
+    max-width: var(--max-width);
+  }
+
+  .hero\:image-column {
+    display: flex;
+    flex: 1 1 200px;
+    justify-content: center;
+  }
+
+  .hero\:image {
+    aspect-ratio: 563 / 520;
+    height: auto;
+    max-width: 100%;
+  }
+</style>

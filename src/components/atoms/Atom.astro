@@ -1,0 +1,12 @@
+---
+const {
+  class: className = "",
+  defaultClass = "",
+  Element = "div",
+  ...props
+} = Astro.props;
+---
+
+<Element class:list={[defaultClass, className]} {...props}>
+  <slot />
+</Element>

@@ -1,0 +1,137 @@
+---
+import awards from "#assets/data/awards.json";
+import education from "#assets/data/education.json";
+import memberships from "#assets/data/memberships.json";
+
+import aboutImg from "#assets/about-image.jpg";
+import gemologicalEducationImg from "#assets/gemological-education.jpg";
+import subSectionImg02 from "#assets/sub-section-image-02.jpg";
+
+import Column from "#components/atoms/Column.astro";
+import LineItems from "#components/atoms/LineItems.astro";
+import Section from "#components/atoms/Section.astro";
+import SectionHeader from "#components/atoms/SectionHeader.astro";
+import SubSection from "#components/atoms/SubSection.astro";
+import TextBlock from "#components/atoms/TextBlock.astro";
+import Headline from "#components/molecules/Headline.astro";
+import SubSectionHeadline from "#components/molecules/SubSectionHeadline.astro";
+import LineItem from "#components/molecules/LineItem.astro";
+import PointContainer from "#components/atoms/PointContainer.astro";
+import PointStart from "#components/atoms/PointStart.astro";
+import PointEnd from "#components/atoms/PointEnd.astro";
+---
+
+<Section id="about-the-appraiser" data-intersect>
+  <SectionHeader id="about-the-appraiser-header">
+    <Column data-variant="stretch">
+      <TextBlock>
+        <Headline
+          headingId="about-the-appraiser-heading"
+          supertitle="About Your Appraiser"
+        >
+          <Fragment slot="title">Melanie Krummel</Fragment>
+          <Fragment slot="description">
+            <p class="paragraph--large">
+              I established Jewelry, Appraisals, Inc., with a vision to
+              conveniently serve retail jewelry stores, law offices, insurance
+              companies and private clientele with concise, efficiently prepared
+              jewelry appraisals.
+            </p>
+            <p>
+              My goal is to build strong and long lasting professional
+              relationships through trust, dedication and consistently
+              increasing my knowledge of the ever-changing jewelry industry.
+            </p>
+            <p class="point-container">
+              Over Twenty-five years of continuing education and training has
+              developed Melanie Krummel’s expertise in the complex areas of
+              gemstone identification, including synthetic and natural stone
+              separation, enhancements and treatments, as well as diamonds and
+              colored stone grading, watches, pearls and antique and period
+              jewelry.
+              <PointStart connects="gemological-education-point" />
+            </p>
+          </Fragment>
+        </Headline>
+      </TextBlock>
+    </Column>
+    <Column data-variant="contain">
+      <img
+        src={aboutImg.src}
+        alt="Melanie Krummel"
+        id="about-the-appraiser-image"
+      />
+      <PointEnd direction="right" id="gemological-point" />
+    </Column>
+  </SectionHeader>
+  <SubSection id="education-and-awards">
+    <Column>
+      <SubSectionHeadline
+        pointId="gemological-education-point"
+        title="Gemological Education"
+      />
+      <LineItems>
+        {
+          education.map(({ title, description }) => (
+            <LineItem Element="li">
+              <Fragment slot="title">{title}</Fragment>
+              <Fragment slot="description">
+                <p>{description}</p>
+              </Fragment>
+            </LineItem>
+          ))
+        }
+      </LineItems>
+      <br />
+      <SubSectionHeadline title="Major Awards" />
+      <LineItems>
+        {
+          awards.map(({ title, description }) => (
+            <LineItem Element="li">
+              <Fragment slot="title">{title}</Fragment>
+              <Fragment slot="description">
+                <p>{description}</p>
+              </Fragment>
+            </LineItem>
+          ))
+        }
+      </LineItems>
+    </Column>
+    <PointContainer id="appraisal-types-image">
+      <img
+        src={gemologicalEducationImg.src}
+        alt="Appraisal Types"
+        class="sub-section:image"
+      />
+      <PointStart connects="professional-memberships-heading-point" />
+    </PointContainer>
+  </SubSection>
+  <SubSection id="your-appraisal-section">
+    <Column class="sub-section:col-image">
+      <img
+        src={subSectionImg02.src}
+        alt="Appraisal Types"
+        class="sub-section:image"
+      />
+    </Column>
+    <Column>
+      <SubSectionHeadline
+        title="Professional Memberships"
+        pointId="professional-memberships-heading-point"
+        id="professional-memberships-heading"
+      />
+      <LineItems>
+        {
+          memberships.map(({ title, description }) => (
+            <LineItem Element="li">
+              <Fragment slot="title">{title}</Fragment>
+              {description && (
+                <Fragment slot="description">description</Fragment>
+              )}
+            </LineItem>
+          ))
+        }
+      </LineItems>
+    </Column>
+  </SubSection>
+</Section>

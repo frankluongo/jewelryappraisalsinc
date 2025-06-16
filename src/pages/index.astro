@@ -1,11 +1,30 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import PageLayout from "#components/templates/PageLayout.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Container from "#components/atoms/Container.astro";
+import Center from "#components/atoms/Center.astro";
+import Main from "#components/atoms/Main.astro";
+
+import Hero from "#components/organisms/Hero.astro";
+import Services from "#components/organisms/Services.astro";
+import Sidebar from "#components/organisms/Sidebar/Sidebar.astro";
+import About from "#components/organisms/About.astro";
+import Contact from "#components/organisms/Contact.astro";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<PageLayout>
+  <Main>
+    <Container>
+      <Sidebar />
+      <Center id="main-content">
+        <Hero />
+        <Services />
+        <About />
+        <Contact />
+      </Center>
+    </Container>
+  </Main>
+</PageLayout>
+
+<script src="../scripts/intersect.js"></script>
+<script src="../scripts/svg.js"></script>

@@ -1,0 +1,27 @@
+---
+import Atom from "./Atom.astro";
+---
+
+<Atom defaultClass="column" {...Astro.props}>
+  <slot />
+</Atom>
+
+<style>
+  .column {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .column[data-variant="contain"] {
+    --max-width: 18.75rem;
+    flex: 1 1 var(--max-width);
+    max-width: 18.75rem;
+  }
+
+  .column[data-variant="stretch"] {
+    flex: 1 1 auto;
+  }
+</style>

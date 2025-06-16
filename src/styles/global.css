@@ -1,0 +1,29 @@
+@import "./css/reset.css";
+@import "./css/variables.css";
+@import "./css/base.css";
+@import "./css/typography.css";
+@import "./css/grid.css";
+@import "./css/helpers.css";
+
+html {
+  color: var(--theme-color-text--default);
+  font-family: var(--theme-font-primary);
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+html,
+body {
+  background-color: var(--theme-color-background--default);
+}
+
+#page-lines {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  pointer-events: none;
+  opacity: 0.25;
+}

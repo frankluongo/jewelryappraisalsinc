@@ -1,0 +1,16 @@
+---
+import Atom from "./Atom.astro";
+---
+
+<Atom defaultClass="text-block" {...Astro.props}>
+  <slot />
+</Atom>
+
+<style>
+  .text-block {
+    --max-width: 50rem;
+
+    max-width: var(--max-width);
+    width: 100%;
+  }
+</style>

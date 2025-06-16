@@ -1,0 +1,93 @@
+---
+import Headline from "#components/molecules/Headline.astro";
+
+import sectionImg from "#assets/section-images.jpg";
+import subSectionImgOne from "#assets/sub-section-image-01.jpg";
+import subSectionImgTwo from "#assets/sub-section-image-02.jpg";
+
+import appraisalTypes from "#assets/data/appraisal.types.json";
+import services from "#assets/data/services.json";
+
+import Column from "#components/atoms/Column.astro";
+import LineItem from "#components/molecules/LineItem.astro";
+import List from "#components/atoms/List.astro";
+import PointContainer from "#components/atoms/PointContainer.astro";
+import PointStart from "#components/atoms/PointStart.astro";
+import Section from "#components/atoms/Section.astro";
+import SectionHeader from "#components/atoms/SectionHeader.astro";
+import SubSectionHeadline from "#components/molecules/SubSectionHeadline.astro";
+import TextBlock from "#components/atoms/TextBlock.astro";
+import SubSection from "#components/atoms/SubSection.astro";
+import LineItems from "#components/atoms/LineItems.astro";
+import PointEnd from "#components/atoms/PointEnd.astro";
+---
+
+<Section id="gemological-services" data-intersect>
+  <SectionHeader id="gemological-services-section">
+    <Column data-variant="contain">
+      <img
+        src={sectionImg.src}
+        alt="Gemological Services"
+        id="gemological-services-image"
+      />
+      <PointEnd id="gemological-services-point" direction="top" />
+    </Column>
+    <Column data-variant="stretch">
+      <TextBlock>
+        <Headline headingId="gemological-services-heading">
+          <Fragment slot="title">Gemological Services Offered</Fragment>
+          <Fragment slot="description">
+            <PointContainer Element="p">
+              Whether you are looking for a written appraisal document or an
+              estate jewelry consultant, this process can be done while you
+              watch in my office or yours, the privacy of your home or bank and
+              at a conveniently located jewelry partner near you.
+              <PointStart connects="appraisal-types-heading-point" />
+            </PointContainer>
+          </Fragment>
+        </Headline>
+      </TextBlock>
+    </Column>
+  </SectionHeader>
+  <SubSection id="appraisal-types-section">
+    <Column>
+      <SubSectionHeadline
+        title="Appraisal Types"
+        pointId="appraisal-types-heading-point"
+        id="appraisal-types-heading"
+      />
+      <LineItems>
+        {
+          appraisalTypes.map(({ title, description }) => (
+            <LineItem Element="li">
+              <Fragment slot="title">{title}</Fragment>
+              <Fragment slot="description">
+                <p>{description}</p>
+              </Fragment>
+            </LineItem>
+          ))
+        }
+      </LineItems>
+    </Column>
+    <div id="appraisal-types-image">
+      <img src={subSectionImgOne.src} alt="Appraisal Types" />
+      <PointStart connects="your-appraisal-heading-point" id="appraisal-types-point" />
+      </div>
+    </div>
+  </SubSection>
+  <SubSection id="your-appraisal-section">
+    <div>
+      <img src={subSectionImgTwo.src} alt="Appraisal Types" />
+    </div>
+    <Column>
+      <SubSectionHeadline title="Your Appraisal" id="your-appraisal-heading" pointId="your-appraisal-heading-point" />
+      <p>
+        In addition to superior customer service, you will receive an accurate
+        and thorough analysis of each piece of jewelry, which includes:
+      </p>
+      <List>
+        {services.map((service) => <li>{service}</li>)}
+      </List>
+    </Column>
+  </SubSection>
+</Section>

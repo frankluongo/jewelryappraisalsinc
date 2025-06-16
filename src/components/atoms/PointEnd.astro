@@ -1,0 +1,30 @@
+---
+const { class: className = "", Element = "div", direction = "left", ...props } = Astro.props;
+---
+
+<Element
+  class:list={["point-end", `point-end--${direction}`, className]}
+  {...props}
+>
+<slot />
+</Element>
+
+<style>
+  .point-end {
+    position: absolute;
+    top: 50%;
+
+    transform: translateY(-50%);
+  }
+
+  .point-end--right {
+    right: 0;
+  }
+
+  .point-end--top {
+    left: 50%;
+    top: 0;
+
+    transform: translateY(0) translateX(-50%);
+  }
+</style>

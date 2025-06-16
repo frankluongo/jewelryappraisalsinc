@@ -1,0 +1,27 @@
+.color\:heading--default {
+  color: var(--theme-color-heading--default);
+}
+
+.color\:subheading--default {
+  color: var(--theme-color-subheading--default);
+}
+
+.color\:text--default {
+  color: var(--theme-color-text--default);
+}
+.color\:text--inverse {
+  color: var(--theme-color-text--inverse);
+}
+.color\:text--shade {
+  color: var(--theme-color-text--shade);
+}
+.color\:text--tint {
+  color: var(--theme-color-text--tint);
+}
+
+.font\:primary {
+  font-family: var(--theme-font-primary);
+}
+.font\:secondary {
+  font-family: var(--theme-font-secondary);
+}

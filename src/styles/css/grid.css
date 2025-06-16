@@ -1,0 +1,51 @@
+.align\:center {
+  align-items: center;
+}
+
+.container {
+  padding-inline: clamp(1rem, 5vw, 6rem);
+  margin-inline: auto;
+  width: 100%;
+  max-width: 1512px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex--columns {
+  flex-direction: column;
+}
+
+.flex--wrap {
+  flex-wrap: wrap;
+}
+
+.flex\:column {
+  flex: 1 0 0;
+  max-width: 100%;
+}
+
+.gap {
+  gap: 1rem;
+}
+
+.gap--lg {
+  gap: 1.5rem;
+}
+
+.gap--sm {
+  gap: 0.5rem;
+}
+
+.gap--xl {
+  gap: 6rem;
+}
+
+.gap--xs {
+  gap: 0.25rem;
+}
+
+.justify\:center {
+  justify-content: center;
+}

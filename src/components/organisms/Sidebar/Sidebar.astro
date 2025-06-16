@@ -1,0 +1,36 @@
+---
+import TimelinePoint from "#components/atoms/TimelinePoint.astro";
+const points = [
+  "hero-description",
+  "gemological-services-heading",
+  "about-the-appraiser-heading",
+  "get-in-touch-heading",
+];
+---
+
+<aside class="sidebar" id="sidebar">
+  <div id="timeline">
+    {points.map((point) => <TimelinePoint aligns={point} />)}
+  </div>
+</aside>
+
+<style>
+  #timeline {
+    height: 100%;
+    width: 1px;
+    background: var(--theme-color-primary--default);
+  }
+
+  .sidebar {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 1 0 100%;
+    max-width: clamp(4rem, 12vw, 12rem);
+  }
+</style>
+
+<script src="./sidebar.js"></script>

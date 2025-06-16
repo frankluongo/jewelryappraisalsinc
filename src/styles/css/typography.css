@@ -1,0 +1,61 @@
+a {
+  font-size: 0.875rem;
+}
+
+html {
+  color: var(--theme-color-text--default);
+  font-family: var(--theme-font-primary);
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+h1,
+.h1 {
+  font-size: clamp(3rem, 6vw, var(--font-size--4xl));
+}
+h2,
+.h2 {
+  font-family: var(--font-secondary);
+  font-style: italic;
+  font-size: clamp(2rem, 5vw, var(--font-size--3xl));
+  font-weight: 700;
+}
+h3,
+.h3 {
+  font-size: 1.5rem; /* 1.5rem; */
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+h4,
+.h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+h5,
+.h5 {
+  font-size: clamp(1.175rem, 2vw, var(--font-size--lg));
+}
+h6,
+.h6 {
+  font-size: var(--font-size--sm);
+}
+p,
+.paragraph {
+  font-size: 0.875rem; /* var(--font-size--default); */
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.paragraph--large {
+  font-size: 1.25rem;
+}
+
+small,
+.small {
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}

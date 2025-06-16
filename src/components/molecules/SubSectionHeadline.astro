@@ -1,0 +1,54 @@
+---
+import Heading from "#components/atoms/Heading.astro";
+import PointContainer from "#components/atoms/PointContainer.astro";
+import PointEnd from "#components/atoms/PointEnd.astro";
+
+const {
+  class: className = "",
+  Element = "header",
+  id,
+  pointId = "",
+  title,
+  ...props
+} = Astro.props;
+---
+
+<Element class:list={["sub-section-header", className]} {...props}>
+  <div class="sub-section-header__circle"></div>
+  <Heading class="sub-section__heading" Element="h3">
+    {title}
+    <PointEnd Element="span" id={pointId} direction="right">
+    </PointEnd>
+  </Heading>
+</Element>
+
+<style>
+  .sub-section-header {
+    position: relative;
+
+    padding-block: 1.5rem 0;
+  }
+
+  .sub-section__heading {
+    position: relative;
+    
+    width: max-content;
+  }
+
+  .sub-section-header__circle {
+    --size: 6rem;
+
+    position: absolute;
+    left: -3rem;
+    top: calc(50% - 0.1rem);
+
+    width: var(--size);
+    height: var(--size);
+
+    border-radius: 50%;
+    border: 1px solid var(--theme-color-action-primary--default);
+    pointer-events: none;
+    opacity: 0.3;
+    transform: translateY(-50%);
+  }
+</style>
