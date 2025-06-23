@@ -1,0 +1,29 @@
+<a class:list={["hyperlink", Astro.props.class]} {...Astro.props}><slot /></a>
+
+<style>
+  .hyperlink {
+    color: var(--theme-color-link--default);
+    text-decoration: none;
+
+    transition: color 150ms ease-in-out;
+  }
+
+  .hyperlink:focus {
+    color: var(--theme-color-link--active);
+  }
+
+  @media (hover: hover) {
+    .hyperlink:hover {
+      color: var(--theme-color-link--active);
+    }
+  }
+
+  .hyperlink--navigation {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 0.75rem;
+    line-height: 1.2;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+</style>

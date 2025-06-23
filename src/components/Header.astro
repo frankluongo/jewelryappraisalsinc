@@ -1,3 +1,49 @@
+---
+import Container from "./modules/Container.astro";
+import List from "./primitives/List.astro";
+import Hyperlink from "./primitives/Hyperlink.astro";
+---
+
 <header class="site-header">
-  <div class="container">header content</div>
+  <Container class="site-header__container">
+    <div>nav logo here</div>
+    <nav>
+      <List class="list--unstyled list--horizontal">
+        <li>
+          <Hyperlink class="hyperlink--navigation" href="#hero">Home</Hyperlink>
+        </li>
+        <li>
+          <Hyperlink class="hyperlink--navigation" href="#about-the-appraiser"
+            >About</Hyperlink
+          >
+        </li>
+        <li>
+          <Hyperlink class="hyperlink--navigation" href="#gemological-services"
+            >Services</Hyperlink
+          >
+        </li>
+        <li>
+          <Hyperlink class="hyperlink--navigation" href="#get-in-touch"
+            >Contact</Hyperlink
+          >
+        </li>
+      </List>
+    </nav>
+  </Container>
 </header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 99;
+
+    padding-block: 3.5rem;
+
+    background-color: var(--theme-color-background--default);
+  }
+
+  .site-header__container {
+    justify-content: space-between;
+  }
+</style>

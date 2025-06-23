@@ -2,17 +2,17 @@
 import getInTouchImg from "#assets/get-in-touch.jpg";
 import getInTouchBodyImg from "#assets/get-in-touch-body.jpg";
 
-import Column from "#components/atoms/Column.astro";
-import PointContainer from "#components/atoms/PointContainer.astro";
-import PointStart from "#components/atoms/PointStart.astro";
-import Section from "#components/atoms/Section.astro";
-import SectionHeader from "#components/atoms/SectionHeader.astro";
-import SubSection from "#components/atoms/SubSection.astro";
-import TextBlock from "#components/atoms/TextBlock.astro";
-import Headline from "#components/molecules/Headline.astro";
-import SubSectionHeadline from "#components/molecules/SubSectionHeadline.astro";
-import LineItems from "#components/atoms/LineItems.astro";
-import LineItem from "#components/molecules/LineItem.astro";
+import Column from "#components/modules/Column.astro";
+import PointContainer from "#components/modules/PointContainer.astro";
+import PointStart from "#components/modules/PointStart.astro";
+import Section from "#components/modules/Section.astro";
+import SectionHeader from "#components/modules/SectionHeader.astro";
+import SubSection from "#components/modules/SubSection.astro";
+import TextBlock from "#components/modules/TextBlock.astro";
+import Headline from "#components/modules/Headline.astro";
+import SubSectionHeadline from "#components/modules/SubSectionHeadline.astro";
+import LineItems from "#components/modules/LineItems.astro";
+import LineItem from "#components/modules/LineItem.astro";
 ---
 
 <Section id="get-in-touch" data-intersect>
@@ -24,7 +24,7 @@ import LineItem from "#components/molecules/LineItem.astro";
         id="about-the-appraiser-image"
       />
     </Column>
-    <Column data-variant="stretch">
+    <Column class="column--stretch">
       <TextBlock>
         <Headline headingId="get-in-touch-heading">
           <Fragment slot="title">Get in touch</Fragment>
@@ -37,7 +37,10 @@ import LineItem from "#components/molecules/LineItem.astro";
               Estate, and Probate, Fair Market Value and Selling your jewelry.
               Schedule an appointment and have your questions answer while you
               watch.
-              <PointStart connects="contact-information-heading-text" />
+              <PointStart
+                Element="span"
+                connects="contact-information-heading-text"
+              />
             </PointContainer>
           </Fragment>
         </Headline>
@@ -45,7 +48,7 @@ import LineItem from "#components/molecules/LineItem.astro";
     </Column>
   </SectionHeader>
   <SubSection id="contact-information">
-    <Column>
+    <Column class="column--stretch">
       <SubSectionHeadline
         id="contact-information-heading"
         pointId="contact-information-heading-text"

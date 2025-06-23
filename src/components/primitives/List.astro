@@ -1,0 +1,26 @@
+<ul class:list={["list", Astro.props.class]} {...Astro.props}><slot /></ul>
+
+<style>
+  .list--horizontal {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .list--styled {
+    list-style: disc;
+  }
+
+  .list--unstyled {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  .list--vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-inline-start: 1rem;
+  }
+</style>

@@ -1,12 +1,17 @@
 ---
-const { class: className = "", Element = "div", direction = "left", ...props } = Astro.props;
+const {
+  class: className = "",
+  Element = "div",
+  direction = "left",
+  ...props
+} = Astro.props;
 ---
 
 <Element
   class:list={["point-end", `point-end--${direction}`, className]}
   {...props}
 >
-<slot />
+  <slot />
 </Element>
 
 <style>
@@ -23,7 +28,7 @@ const { class: className = "", Element = "div", direction = "left", ...props } =
 
   .point-end--top {
     left: 50%;
-    top: 0;
+    top: 1rem;
 
     transform: translateY(0) translateX(-50%);
   }

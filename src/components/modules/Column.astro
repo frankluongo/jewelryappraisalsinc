@@ -1,10 +1,10 @@
 ---
-import Atom from "./Atom.astro";
+const { Element = "div", className, ...rest } = Astro.props;
 ---
 
-<Atom defaultClass="column" {...Astro.props}>
+<Element class:list={["column", className]} {...rest}>
   <slot />
-</Atom>
+</Element>
 
 <style>
   .column {
@@ -15,13 +15,13 @@ import Atom from "./Atom.astro";
     gap: 1.5rem;
   }
 
-  .column[data-variant="contain"] {
+  .column--contain {
     --max-width: 18.75rem;
     flex: 1 1 var(--max-width);
     max-width: 18.75rem;
   }
 
-  .column[data-variant="stretch"] {
+  .column--stretch {
     flex: 1 1 auto;
   }
 </style>

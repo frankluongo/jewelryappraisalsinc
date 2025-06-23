@@ -2,7 +2,7 @@
 const { variant = "primary", Element = "button", ...rest } = Astro.props;
 ---
 
-<Element class=`button button--${variant}` {...rest}><slot /></Element>
+<Element class:list={["button", Astro.props.class]} {...rest}><slot /></Element>
 
 <style>
   .button {

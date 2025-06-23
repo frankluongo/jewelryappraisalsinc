@@ -2,7 +2,7 @@
 
 ---
 
-<div class="container">
+<div class:list={["container", Astro.props.class]} {...Astro.props}>
   <slot />
 </div>
 <style>

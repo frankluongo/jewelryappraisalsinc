@@ -1,9 +1,11 @@
 ---
-import PageLayout from "#components/templates/PageLayout.astro";
+import PageLayout from "#components/layouts/PageLayout.astro";
 
-import Container from "#components/atoms/Container.astro";
-import Center from "#components/atoms/Center.astro";
-import Main from "#components/atoms/Main.astro";
+import Main from "#components/primitives/Main.astro";
+
+import Container from "#components/modules/Container.astro";
+import Divider from "#components/modules/Divider.astro";
+import PrimaryContent from "#components/modules/PrimaryContent.astro";
 
 import Hero from "#components/organisms/Hero.astro";
 import Services from "#components/organisms/Services.astro";
@@ -16,12 +18,14 @@ import Contact from "#components/organisms/Contact.astro";
   <Main>
     <Container>
       <Sidebar />
-      <Center id="main-content">
+      <PrimaryContent id="main-content">
         <Hero />
         <Services />
+        <Divider />
         <About />
+        <Divider />
         <Contact />
-      </Center>
+      </PrimaryContent>
     </Container>
   </Main>
 </PageLayout>

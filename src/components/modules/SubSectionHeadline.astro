@@ -1,7 +1,6 @@
 ---
-import Heading from "#components/atoms/Heading.astro";
-import PointContainer from "#components/atoms/PointContainer.astro";
-import PointEnd from "#components/atoms/PointEnd.astro";
+import Heading from "#components/primitives/Heading.astro";
+import PointEnd from "#components/modules/PointEnd.astro";
 
 const {
   class: className = "",
@@ -17,8 +16,7 @@ const {
   <div class="sub-section-header__circle"></div>
   <Heading class="sub-section__heading" Element="h3">
     {title}
-    <PointEnd Element="span" id={pointId} direction="right">
-    </PointEnd>
+    <PointEnd Element="span" id={pointId} direction="right" />
   </Heading>
 </Element>
 
@@ -31,7 +29,7 @@ const {
 
   .sub-section__heading {
     position: relative;
-    
+
     width: max-content;
   }
 

@@ -1,11 +1,10 @@
 ---
-import Atom from "./Atom.astro";
-const props = Astro.props;
+const { className, ...rest } = Astro.props;
 ---
 
-<Atom defaultClass="section-header" {...props}>
+<header class:list={["section-header", className]} {...rest}>
   <slot />
-</Atom>
+</header>
 
 <style>
   .section-header {

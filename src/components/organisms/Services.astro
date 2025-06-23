@@ -1,6 +1,4 @@
 ---
-import Headline from "#components/molecules/Headline.astro";
-
 import sectionImg from "#assets/section-images.jpg";
 import subSectionImgOne from "#assets/sub-section-image-01.jpg";
 import subSectionImgTwo from "#assets/sub-section-image-02.jpg";
@@ -8,23 +6,27 @@ import subSectionImgTwo from "#assets/sub-section-image-02.jpg";
 import appraisalTypes from "#assets/data/appraisal.types.json";
 import services from "#assets/data/services.json";
 
-import Column from "#components/atoms/Column.astro";
-import LineItem from "#components/molecules/LineItem.astro";
-import List from "#components/atoms/List.astro";
-import PointContainer from "#components/atoms/PointContainer.astro";
-import PointStart from "#components/atoms/PointStart.astro";
-import Section from "#components/atoms/Section.astro";
-import SectionHeader from "#components/atoms/SectionHeader.astro";
-import SubSectionHeadline from "#components/molecules/SubSectionHeadline.astro";
-import TextBlock from "#components/atoms/TextBlock.astro";
-import SubSection from "#components/atoms/SubSection.astro";
-import LineItems from "#components/atoms/LineItems.astro";
-import PointEnd from "#components/atoms/PointEnd.astro";
+import List from "#components/primitives/List.astro";
+
+import Column from "#components/modules/Column.astro";
+import Headline from "#components/modules/Headline.astro";
+import LineItem from "#components/modules/LineItem.astro";
+import LineItems from "#components/modules/LineItems.astro";
+import PointContainer from "#components/modules/PointContainer.astro";
+import PointEnd from "#components/modules/PointEnd.astro";
+import PointStart from "#components/modules/PointStart.astro";
+import Section from "#components/modules/Section.astro";
+import SectionHeader from "#components/modules/SectionHeader.astro";
+import SubSection from "#components/modules/SubSection.astro";
+import SubSectionHeadline from "#components/modules/SubSectionHeadline.astro";
+import TextBlock from "#components/modules/TextBlock.astro";
+
+const YOUR_APPRAISAL_POINT_ID = "your-appraisal-heading-point";
 ---
 
 <Section id="gemological-services" data-intersect>
   <SectionHeader id="gemological-services-section">
-    <Column data-variant="contain">
+    <Column class="column--contain">
       <img
         src={sectionImg.src}
         alt="Gemological Services"
@@ -32,7 +34,7 @@ import PointEnd from "#components/atoms/PointEnd.astro";
       />
       <PointEnd id="gemological-services-point" direction="top" />
     </Column>
-    <Column data-variant="stretch">
+    <Column class="column--stretch">
       <TextBlock>
         <Headline headingId="gemological-services-heading">
           <Fragment slot="title">Gemological Services Offered</Fragment>
@@ -70,24 +72,32 @@ import PointEnd from "#components/atoms/PointEnd.astro";
       </LineItems>
     </Column>
     <div id="appraisal-types-image">
-      <img src={subSectionImgOne.src} alt="Appraisal Types" />
-      <PointStart connects="your-appraisal-heading-point" id="appraisal-types-point" />
-      </div>
+      <PointContainer>
+        <img src={subSectionImgOne.src} alt="Appraisal Types" />
+        <PointStart
+          connects={YOUR_APPRAISAL_POINT_ID}
+          id="appraisal-types-to-your-appraisal-point"
+        />
+      </PointContainer>
     </div>
-  </SubSection>
-  <SubSection id="your-appraisal-section">
-    <div>
-      <img src={subSectionImgTwo.src} alt="Appraisal Types" />
-    </div>
-    <Column>
-      <SubSectionHeadline title="Your Appraisal" id="your-appraisal-heading" pointId="your-appraisal-heading-point" />
-      <p>
-        In addition to superior customer service, you will receive an accurate
-        and thorough analysis of each piece of jewelry, which includes:
-      </p>
-      <List>
-        {services.map((service) => <li>{service}</li>)}
-      </List>
-    </Column>
   </SubSection>
 </Section>
+<SubSection id="your-appraisal-section">
+  <div>
+    <img src={subSectionImgTwo.src} alt="Appraisal Types" />
+  </div>
+  <Column>
+    <SubSectionHeadline
+      title="Your Appraisal"
+      id="your-appraisal-heading"
+      pointId={YOUR_APPRAISAL_POINT_ID}
+    />
+    <p>
+      In addition to superior customer service, you will receive an accurate and
+      thorough analysis of each piece of jewelry, which includes:
+    </p>
+    <List class="list--vertical list--styled">
+      {services.map((service) => <li>{service}</li>)}
+    </List>
+  </Column>
+</SubSection>

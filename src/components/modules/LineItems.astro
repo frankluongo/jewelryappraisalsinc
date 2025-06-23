@@ -1,0 +1,18 @@
+---
+import List from "#components/primitives/List.astro";
+const { className, ...rest } = Astro.props;
+---
+
+<List
+  class:list={["list--unstyled", "list--vertical", "line-items", className]}
+  {...rest}
+>
+  <slot />
+</List>
+
+<style>
+  .line-items {
+    gap: 1.5rem;
+    padding: 0 0 0 1rem;
+  }
+</style>

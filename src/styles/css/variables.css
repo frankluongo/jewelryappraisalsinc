@@ -127,6 +127,8 @@
 
     --theme-color-heading--shade: var(--color-picton-blue--tint-40);
 
+    --theme-color-link--active: var(--color-picton-blue--tint-60);
+
     --theme-color-text--default: var(--color-picton-blue--tint-80);
   }
 }

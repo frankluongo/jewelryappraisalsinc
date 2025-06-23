@@ -1,12 +1,11 @@
 ---
 import img from "#assets/hero-image.jpg";
 
-import Button from "#components/atoms/Button.astro";
-import PointContainer from "#components/atoms/PointContainer.astro";
-import PointStart from "#components/atoms/PointStart.astro";
+import Button from "#components/primitives/Button.astro";
+import PointContainer from "#components/modules/PointContainer.astro";
+import PointStart from "#components/modules/PointStart.astro";
 
-import Headline from "#components/molecules/Headline.astro";
-import PointEnd from "#components/atoms/PointEnd.astro";
+import Headline from "#components/modules/Headline.astro";
 ---
 
 <div class="hero" id="hero" data-intersect>
@@ -28,7 +27,10 @@ import PointEnd from "#components/atoms/PointEnd.astro";
             href="#gemological-services"
             id="view-services-button">View Services</Button
           >
-          <PointStart connects="gemological-services-point" id="view-services-point" />
+          <PointStart
+            connects="gemological-services-point"
+            id="view-services-point"
+          />
         </PointContainer>
         <Button Element="a" href="#about-the-appraiser">Learn about me</Button>
       </footer>

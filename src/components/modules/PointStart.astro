@@ -1,14 +1,18 @@
 ---
-const { class: className = "", connects, ...props } = Astro.props;
+const {
+  class: className = "",
+  Element = "div",
+  connects,
+  ...props
+} = Astro.props;
 ---
 
-<div
+<Element
   class:list={["point-start", className]}
   data-point
   data-connects={connects}
   {...props}
->
-</div>
+/>
 <style>
   .point-start {
     top: 100%;
